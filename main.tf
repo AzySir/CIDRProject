@@ -6,7 +6,7 @@ resource "aws_vpc" "main" {
   }
 }
 
--------------- Public ---------------------
+# -------------- Public ---------------------
 
 output "main_vpc" {
   value = aws_vpc.main.id
@@ -55,7 +55,7 @@ resource "aws_subnet" "public_subnet_az3" {
 }
 
 
---------------- Private -----------------------
+# --------------- Private -----------------------
 resource "aws_subnet" "private_subnet_az1" {
   vpc_id     = aws_vpc.main.id
   cidr_block = var.private_cidr[0]
@@ -81,7 +81,7 @@ resource "aws_subnet" "private_subnet_az3" {
   }
 }
 
------------------ Data ---------------------
+# ----------------- Data ---------------------
 resource "aws_subnet" "data_subnet1" {
   vpc_id     = aws_vpc.main.id
   cidr_block = var.data_cidr[0]
