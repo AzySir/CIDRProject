@@ -29,10 +29,3 @@ This is a dummy project to show usage of terraform by creating a VPC and adding 
 | Supernet      | AZ1           |  AZ2          |  AZ3           |
 | ------------- |:-------------:|:-------------:|:--------------:|
 | 10.0.20.0/21 | 10.0.20.0/23 | 10.0.22.0/23 | 10.0.24.0/23
-
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
