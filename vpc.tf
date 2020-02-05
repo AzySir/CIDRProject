@@ -1,11 +1,11 @@
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/19"
+# resource "aws_vpc" "main" {
+#   cidr_block = "10.0.0.0/19"
 
-  tags = {
-    Name = var.projecttag
-  }
-}
+#   tags = {
+#     Name = var.projecttag
+#   }
+# }
 
-output "main_vpc" {
-  value = aws_vpc.main.id
-}
+# output "main_vpc" {
+#   value = aws_vpc.main.id
+# }
