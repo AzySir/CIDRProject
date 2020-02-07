@@ -7,6 +7,6 @@ resource "aws_vpc" "main" {
 }
 
 output "main_vpc" {
-  value = aws_vpc.main.id
+  value       = aws_vpc.main.id
   description = "Main VPC"
 }
