@@ -23,3 +23,8 @@ module "public_subnet_az3" {
   availability_zone = var.az[2]
   subnet_name       = "Public AZ3"
 }
+
+resource "aws_eip" "one" {
+  vpc                       = true
+  associate_with_private_ip = "10.0.0.10"
+}
