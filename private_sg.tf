@@ -16,3 +16,4 @@ resource "aws_security_group_rule" "ping_egress_private" {
 
   security_group_id = aws_security_group.private_sg.id
 }
+
