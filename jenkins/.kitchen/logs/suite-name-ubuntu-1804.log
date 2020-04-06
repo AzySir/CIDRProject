@@ -1,0 +1,10 @@
+I, [2020-02-17T15:59:15.010016 #67169]  INFO -- suite-name-ubuntu-1804: -----> Creating <suite-name-ubuntu-1804>...
+I, [2020-02-17T15:59:15.010123 #67169]  INFO -- suite-name-ubuntu-1804: [Dummy] Create on instance=#<Kitchen::Instance:0x00007fd448344b48> with state={:my_id=>"suite-name-ubuntu-1804-1581915555"}
+I, [2020-02-17T15:59:15.010843 #67169]  INFO -- suite-name-ubuntu-1804: Finished creating <suite-name-ubuntu-1804> (0m0.00s).
+I, [2020-02-17T15:59:15.011005 #67169]  INFO -- suite-name-ubuntu-1804: -----> Converging <suite-name-ubuntu-1804>...
+I, [2020-02-17T15:59:15.013749 #67169]  INFO -- suite-name-ubuntu-1804: Preparing files for transfer
+I, [2020-02-17T15:59:15.013860 #67169]  INFO -- suite-name-ubuntu-1804: Preparing dna.json
+I, [2020-02-17T15:59:15.014256 #67169]  INFO -- suite-name-ubuntu-1804: Resolving cookbook dependencies with Berkshelf 7.0.8...
+I, [2020-02-17T15:59:15.033214 #67169]  INFO -- suite-name-ubuntu-1804: Removing non-cookbook files before transfer
+I, [2020-02-17T15:59:15.033717 #67169]  INFO -- suite-name-ubuntu-1804: Preparing solo.rb
+I, [2020-02-17T15:59:30.558245 #67169]  INFO -- suite-name-ubuntu-1804: [SSH] connection failed, retrying in 1 seconds (#<Net::SSH::Disconnect: disconnected: Too many authentication failures (2)>)

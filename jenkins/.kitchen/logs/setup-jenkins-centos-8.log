@@ -1,0 +1,6 @@
+I, [2020-02-17T16:34:30.050297 #74440]  INFO -- setup-jenkins-centos-8: -----> Converging <setup-jenkins-centos-8>...
+I, [2020-02-17T16:34:30.052911 #74440]  INFO -- setup-jenkins-centos-8: Preparing files for transfer
+I, [2020-02-17T16:34:30.053058 #74440]  INFO -- setup-jenkins-centos-8: Preparing dna.json
+I, [2020-02-17T16:34:30.053487 #74440]  INFO -- setup-jenkins-centos-8: Resolving cookbook dependencies with Berkshelf 7.0.8...
+I, [2020-02-17T16:34:30.073078 #74440]  INFO -- setup-jenkins-centos-8: Removing non-cookbook files before transfer
+I, [2020-02-17T16:34:30.073845 #74440]  INFO -- setup-jenkins-centos-8: Preparing solo.rb

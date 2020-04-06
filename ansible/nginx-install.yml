@@ -1,0 +1,17 @@
+---
+- name: Adam-Ansible-Test
+  hosts: all
+  become: true
+
+  tasks:
+      - name: Download nginx
+        yum:
+          name: nginx
+          state: latest
+      
+      - name: Start Nginx
+        service: 
+          name: nginx
+          start: started
+
+

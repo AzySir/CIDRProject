@@ -1,0 +1,110 @@
+---
+  # driver:
+  #   name: adam-ec2
+  #   instance_type: m4.large
+  #   region: ap-southeast-2
+  #   subnet_id: subnet-068facda8d447e2e8
+  #   security_group_ids: ["sg-0701a0ae70c5c620e"]
+  #   associate_public_ip: true
+  #   #user_data: ./user-data
+  #   tags:
+  #     Name: beam-server]
+
+# driver:
+#   name: ec2
+#   instance_type: m4.large
+#   region: ap-southeast-2
+#   subnet_id: subnet-068facda8d447e2e8
+#   security_group_ids: ["sg-0701a0ae70c5c620e"]
+#   associate_public_ip: true
+#   iam_profile_name: s3AccessRO
+#   #user_data: ./user-data
+#   tags:
+#     Name: beam-server
+
+provisioner:
+  name: chef_solo
+  cookbook_path: cookbooks
+transport:
+    port: 22
+    password: admin
+    username: root
+    ssh_key: ../security/mykey.pem
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos-8
+  # - name: ubuntu-18.04
+
+suites:
+  - name: setup_jenkins
+    run_list:
+      - recipe[cookbook_name::installjava]
+      # - recipe[cookbook_name::installjenkins]
+      # - recipe[cookbook_name::runjenkins]
+
+
+
+# ---
+#   driver:
+#     name: ec2
+#     instance_type: m4.large
+#     region: ap-southeast-2
+#     subnet_id: subnet-068facda8d447e2e8
+#     security_group_ids: ["sg-0701a0ae70c5c620e"]
+#     associate_public_ip: true
+#     iam_profile_name: s3AccessRO
+#     #user_data: ./user-data
+#     tags:
+#       Name: beam-server
+#   provisioner:
+#     name: chef_solo
+#     always_update_cookbooks: true
+#     cookbook_path: cookbooks
+#     # https://discourse.chef.io/t/test-kitchen-1-10-0-released/8721
+#     # Additional config to support reboots in test-kitchen
+#     retry_on_exit_code:
+#       - 35 # 35 is the exit code signaling that the node is rebooting
+#     wait_for_retry: 90
+#     max_retries: 10
+#     client_rb:
+#       # exit_status: :enabled # Opt-in to the standardized exit codes / No longer required as of Chef 13 (it's enabled by default)
+#       client_fork: false  # Forked instances don't return the real exit code
+#   verifier:
+#     name: inspec
+#   transport:
+#     name: winrm
+#     username: Administrator
+#   platforms:
+#     - name: windows-2012r2
+#       driver:
+#         image_id: ami-0be50d7b48578916e
+#         block_device_mappings:
+#           - device_name: /dev/sda1
+#             ebs:
+#               volume_size: 30
+#               encrypted: true
+#           - device_name: xvdb
+#             ebs:
+#               volume_size: 30
+#               encrypted: true
+#   suites:
+#     - name: default
+#       run_list:
+#       - recipe[beam-server::disksetup] # Provision Hard Disks
+#       - recipe[beam-server::default] # Pull files from S3 
+#       - recipe[beam-server::features] #Add features into the OS 
+#       # --------------Install App------------------
+#       - recipe[beam-server::registry]
+#       - recipe[beam-server::installretailserver]
+#       # --------------------------------
+#       # - recipe[beam_server::user] # **** MANUAL ***** - Assuming a User
+#       # - recipe[beam_server::timezone] # Set the Timezone of VM 
+#       - recipe[beam-server::firewall] # Set Firewall 
+#       # verifier:
+#       #   inspec_tests:
+#       #     - test/integration/default
+#       attributes:
+#         kitchen: true
